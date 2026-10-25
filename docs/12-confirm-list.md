@@ -1,0 +1,17 @@
+# Step 12.5: Developer Confirmation & Decision Audit List
+
+The items below represent architectural assumptions, heuristic thresholds, and operational choices identified during code analysis that require formal developer verification.
+
+---
+
+## Catalog of `[CONFIRM WITH DEVELOPER]` Items
+
+| # | Topic & Scope | File & Location Reference | Inferred Implementation Rationale | Developer Verification Question |
+|---|---|---|---|---|
+| **1** | **Heuristic Authenticity Baseline** | [`camara-temper/src/lib/fileAnalyzer.ts:L68`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/camara-temper/src/lib/fileAnalyzer.ts#L68) | Baseline score is set to `75` (points added for camera info/GPS, deducted for editing software). | *Confirm*: Is 75 chosen as the calibrated neutral threshold, or should it start at 50/100 depending on industry evidence standards? |
+| **2** | **Software Deductions (-20 Points)** | [`camara-temper/src/lib/fileAnalyzer.ts:L158`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/camara-temper/src/lib/fileAnalyzer.ts#L158) | Detecting Photoshop, GIMP, Canva, or Figma deducts 20 points and marks a danger flag. | *Confirm*: Should editing software presence immediately disqualify evidence (drop score to 0%), or is a 20-point deduction the intended calibrated penalty? |
+| **3** | **Text Truncation Threshold (5,000 Chars)** | [`truthlence/src/pages/Index.tsx:L73`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/truthlence/src/pages/Index.tsx#L73) | Documents and text submissions are capped at `text.slice(0, 5000)`. | *Confirm*: Was 5,000 characters selected to bound Edge Function token usage and latency, or should large documents support multi-chunk processing? |
+| **4** | **Dynamic Port Scan Upper Bound (5200)** | [`mainpage/src/pages/FeatureEmbed.tsx:L69`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/mainpage/src/pages/FeatureEmbed.tsx#L69) | The recursive port prober scans from base port 5176 up to port 5200 with 100ms throttle. | *Confirm*: Is the 24-port scan range (5176–5200) sufficient for local dev, or should this range be customizable via environment variables? |
+| **5** | **MediaVault Storage Quota (10 GB Virtual)** | [`mediavault 2/src/components/mediavault/StorageWidget.tsx`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/mediavault%202/src/components/mediavault/StorageWidget.tsx) | The storage widget calculates usage against a hardcoded 10GB virtual limit. | *Confirm*: Is the 10GB capacity intended as a simulated tier quota, or will it tie to an actual cloud storage bucket allocation? |
+| **6** | **Simulated Progress Delay (400ms)** | [`mediavault 2/src/lib/mediavault-store.ts:L133-145`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/mediavault%202/src/lib/mediavault-store.ts#L133-L145) | Staged progress simulation delays by 400ms between reading, encrypting, and storing stages. | *Confirm*: Was this delay introduced strictly for visual UX feedback, and should production replace it with true AES-GCM encryption streams? |
+| **7** | **Default Role Fallback ("Journalist")** | [`mainpage/src/contexts/AuthContext.tsx:L57`](file:///Users/avishjain/avishjain9-repos/33-codealchemist/mainpage/src/contexts/AuthContext.tsx#L57) | Profile lookup falls back to `data?.role || "Journalist"` if undefined. | *Confirm*: Should unassigned users default to Journalist, or should a stricter unauthenticated guest role be enforced? |

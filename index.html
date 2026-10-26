@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruthGuard Hub - Unified Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.15; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(1.05); }
+    }
+    .glow-blob { animation: pulse-slow 8s infinite ease-in-out; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden">
+  <!-- Glowing ambient backgrounds -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="glow-blob absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+    <div class="glow-blob absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" style="animation-delay: 2s;"></div>
+    <div class="glow-blob absolute bottom-0 left-1/2 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative z-10 border-b border-slate-800/60 backdrop-blur-xl bg-slate-950/70">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">TruthGuard Hub</h1>
+          <p class="text-slate-400 text-xs">Unified Security & AI Verification Platform</p>
+        </div>
+      </div>
+      <div class="hidden sm:flex items-center space-x-2 bg-slate-900/80 px-3 py-1.5 rounded-full border border-slate-800 text-xs text-slate-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>All Security Modules Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="relative z-10 max-w-7xl mx-auto px-6 py-16">
+    <section class="mb-16">
+      <div class="max-w-3xl">
+        <span class="text-xs uppercase tracking-wider font-semibold text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-full mb-4 inline-block">Enterprise Defense System</span>
+        <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+          Enterprise-Grade <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Security & Authenticity</span>
+        </h2>
+        <p class="text-slate-300 text-lg leading-relaxed mb-6">
+          A comprehensive suite of security solutions protecting your operations from fraud, deepfake tampering, harmful communications, and unauthorized camera access.
+        </p>
+      </div>
+    </section>
+
+    <!-- Modules Grid -->
+    <section class="mb-20">
+      <h3 class="text-xl font-bold mb-8 text-slate-200 flex items-center space-x-2">
+        <span>Integrated Security Modules</span>
+        <span class="text-xs font-normal text-slate-500">(6 Active Capabilities)</span>
+      </h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 group shadow-lg">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform shadow-md shadow-red-500/20">
+            <i data-lucide="phone-call" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Call & SMS Detection</h4>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">Detect fraudulent calls, phishing attempts, and harmful SMS content using AI-driven linguistic threat scoring.</p>
+          <div class="flex items-center text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
+            <span>Enterprise Module</span> &rarr;
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 group shadow-lg">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform shadow-md shadow-blue-500/20">
+            <i data-lucide="video" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Camera Tamper Detection</h4>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">Real-time detection of camera lens obstruction, visual tampering, frame freezes, and unauthorized stream modifications.</p>
+          <div class="flex items-center text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
+            <span>Vision Core</span> &rarr;
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 group shadow-lg">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform shadow-md shadow-purple-500/20">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">MediaVault Secure Storage</h4>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">End-to-end encrypted media storage with cryptographic chain-of-custody verification and immutable metadata logging.</p>
+          <div class="flex items-center text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
+            <span>Encrypted Vault</span> &rarr;
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 group shadow-lg">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform shadow-md shadow-emerald-500/20">
+            <i data-lucide="file-check" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">TruthLens Fact Checking</h4>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">Deepfake and synthetic media detection with multi-model forensic analysis and verified provenance citation.</p>
+          <div class="flex items-center text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
+            <span>Forensics Engine</span> &rarr;
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 group shadow-lg">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform shadow-md shadow-amber-500/20">
+            <i data-lucide="puzzle" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Browser Extension</h4>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">Client-side browser extension delivering instant on-page verification of web media, screenshots, and audio clips.</p>
+          <div class="flex items-center text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
+            <span>Client Suite</span> &rarr;
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 group shadow-lg">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform shadow-md shadow-cyan-500/20">
+            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Analytics Dashboard</h4>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">Comprehensive telemetry dashboard displaying security scores, active incidents, and forensic breakdown.</p>
+          <div class="flex items-center text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
+            <span>Unified Telemetry</span> &rarr;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="border-t border-slate-800/80 pt-16">
+      <h3 class="text-xl font-bold mb-8 text-slate-200">Why TruthGuard?</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-xl">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-white mb-2">Advanced Neural Models</h4>
+          <p class="text-slate-400 text-sm">State-of-the-art vision and language models trained on massive multimodal fraud datasets.</p>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-xl">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-white mb-2">Sub-100ms Latency</h4>
+          <p class="text-slate-400 text-sm">Real-time edge evaluation for live camera feeds and streaming communications without latency penalty.</p>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-xl">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-white mb-2">Zero-Trust Privacy</h4>
+          <p class="text-slate-400 text-sm">Strict client-side hashing and zero-knowledge storage ensuring raw patient & user data never leaks.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800/60 bg-slate-950/80 mt-16 py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500">
+      &copy; 2026 TruthGuard Platform &bull; Avish Jain &bull; Enterprise Verification Hub
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
